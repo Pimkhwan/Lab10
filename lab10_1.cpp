@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 
-	float Interest, Payment, NewBalance, PrevBalance, rate, Total;
+	double Interest, Payment, NewBalance, PrevBalance, rate, Total;
 	int i = 1;
 
 	cout << "Enter initial loan: ";
@@ -43,14 +43,14 @@ int main()
 		Total = PrevBalance + Interest;
 		cout << setw(13) << left << Total;
 		//payment
-		if (PrevBalance > Payment)
+		if (Payment < Total)
 		{
 			cout << setw(13) << left << Payment;
 		}
 		else
 		{
 			Payment = Total;
-			cout << setw(13) << left << Payment;
+			cout << setw(13) << left << Total;
 		}
 		//newbalance
 		NewBalance = Total - Payment;
